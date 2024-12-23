@@ -82,7 +82,9 @@ The frontend is designed for simplicity and engagement:
 ---
 
 ## Screenshots
+<img width="1440" alt="Screenshot 2024-12-24 at 1 34 05 AM" src="https://github.com/user-attachments/assets/e352faea-adbc-4644-a443-ad00fbb5e905" />
 
-1. **Main Screen**: Interactive UI with live status updates.
-2. **Game Moves**: Buttons with Rock, Paper, and Scissors images.
-3. **Winner Declaration**: Displays the winner and updates the balance.
+<img width="1440" alt="Screenshot 2024-12-24 at 1 34 13 AM" src="https://github.com/user-attachments/assets/742d2a42-78ad-426e-95ca-cb021045d98d" />
+
+<img width="1440" alt="Screenshot 2024-12-24 at 1 32 54 AM" src="https://github.com/user-attachments/assets/48639735-1c64-4f06-8556-02d7c4e99826" />
+
