@@ -1,7 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.12;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+interface IMemeCoin {
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function balanceOf(address account) external view returns (uint256);
+}
 
 contract RockPaperScissors {
     enum Move { None, Rock, Paper, Scissors }
@@ -13,8 +17,10 @@ contract RockPaperScissors {
 
     Player public player1;
     Player public player2;
-    IERC20 public memeCoin;
-    uint256 public constant ENTRY_FEE = 10 * 10**18; // Adjusted for a typical ERC-20 decimal place.
+
+    IMemeCoin public memeCoin;
+
+    uint256 public constant ENTRY_FEE = 10 * 10**18; // Adjusted for a typical ERC-20 decimal place
     uint256 public constant REWARD_AMOUNT = 10 * 10**18; // Reward for winning the game
 
     event PlayerJoined(address indexed player);
@@ -24,7 +30,7 @@ contract RockPaperScissors {
 
     // Constructor: Initialize with MemeCoin contract address
     constructor(address _memeCoinAddress) {
-        memeCoin = IERC20(_memeCoinAddress);
+        memeCoin = IMemeCoin(_memeCoinAddress);
     }
 
     // Function to claim initial tokens (100 meme coins)
