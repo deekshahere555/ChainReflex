@@ -1,19 +1,51 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.12;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+contract MemeCoin {
+    string public name = "MEMECOIN";
+    string public symbol = "MEME";
+    uint8 public decimals = 18;
+    uint256 public totalSupply;
 
-contract MemeCoin is ERC20 {
-    mapping(address => bool) private hasClaimed;
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
 
-    constructor() ERC20("MemeCoin", "MEME") {
-        _mint(address(this), 1000000 * 10**18); // Mint tokens to the contract for distribution
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    constructor(uint256 _initialSupply) {
+        totalSupply = _initialSupply * 10**decimals;
+        balanceOf[msg.sender] = totalSupply;
+        emit Transfer(address(0), msg.sender, totalSupply);
     }
 
-    function claimInitialTokens() external {
-        require(!hasClaimed[msg.sender], "Tokens already claimed");
-        uint256 initialAmount = 100 * 10**18; // 100 tokens
-        hasClaimed[msg.sender] = true;
-        _transfer(address(this), msg.sender, initialAmount);
+    function transfer(address _to, uint256 _value) public returns (bool) {
+        require(balanceOf[msg.sender] >= _value, "Insufficient balance");
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+
+    function approve(address _spender, uint256 _value) public returns (bool) {
+        allowance[msg.sender][_spender] = _value;
+        emit Approval(msg.sender, _spender, _value);
+        return true;
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
+        require(balanceOf[_from] >= _value, "Insufficient balance");
+        require(allowance[_from][msg.sender] >= _value, "Allowance exceeded");
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        allowance[_from][msg.sender] -= _value;
+        emit Transfer(_from, _to, _value);
+        return true;
+    }
+
+    function mint(address _to, uint256 _amount) public {
+        totalSupply += _amount * 10**decimals;
+        balanceOf[_to] += _amount * 10**decimals;
+        emit Transfer(address(0), _to, _amount * 10**decimals);
     }
 }
