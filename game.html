@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Game !</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@4.16.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Start Game</h1>
+        </header>
+        <div id="status" class="status"></div>
+        <div id="balance" class="balance">Balance: 0 MEME</div>
+        <div id="playersSection" class="players-section">
+            <h3>Players Joined</h3>
+            <div class="player-info">Player 1: <span id="player1">Waiting...</span></div>
+            <div class="player-info">Player 2: <span id="player2">Waiting...</span></div>
+            <button id="refreshPlayers" class="btn">Refresh Players</button>
+        </div>
+        <button id="claimTokens" class="btn">Claim Initial Tokens</button>
+        <button id="joinGame" class="btn">Join Game</button>
+        <div id="makeMoveSection" class="make-move-section">
+            <h3>Make a Move</h3>
+            <div class="move-buttons">
+                <button onclick="makeMove(1)" class="move-btn rock-btn">Rock</button>
+                <button onclick="makeMove(2)" class="move-btn paper-btn">Paper</button>
+                <button onclick="makeMove(3)" class="move-btn scissors-btn">Scissors</button>
+            </div>
+        </div>
+        <button id="determineWinner" class="btn">Determine Winner</button>
+        <button id="resetGame" class="btn">Reset Game</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

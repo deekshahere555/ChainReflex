@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Reflex - Play Now!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <style>
+        /* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h3{
+    color: white;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background:url(images/background-image.jpg);
+    background-size: cover;
+}
+
+/* Navbar */
+nav {
+    padding: 15px 0;
+    background: none;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+    background: none;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Features Section */
+/* Features Section */
+.features {
+    background: none;    
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: none;
+    border: white 2px solid;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .card-img {
+        height: 200px;
+    }
+}
+
+
+/* Start Game Button */
+.start-game {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.start-game .btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.start-game .btn:hover {
+    background-color: #e67e22;
+}
+
+/* About Section */
+.about {
+    background: none;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <h3 href="#" class="logo">Chain Reflex</h3>
+            <ul class="nav-links">
+                <li><a href="#startGame">Start Game</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Chain Reflex</h1>
+            <p>Compete in a classic game of Rock Paper Scissors and win MemeCoins on the blockchain!</p>
+            
+        </div>
+        
+    </section>
+
+    <!-- Features Section -->
+<section id="features" class="features">
+    <div class="features-container">
+        <div class="card">
+            <img src="images/blockchain-image.jpg" alt="Blockchain Powered" class="card-img">
+            <h3>Blockchain Powered</h3>
+            <p>Decentralized and transparent gameplay powered by Ethereum smart contracts.</p>
+        </div>
+        <div class="card">
+            <img src="images/memecoins-image.jpg" alt="Play for MemeCoins" class="card-img">
+            <h3>Play for MemeCoins</h3>
+            <p>Wager MemeCoins, make your moves, and win rewards based on your strategy.</p>
+        </div>
+        <div class="card">
+            <img src="images/fair-secure-image.jpg" alt="Fair and Secure" class="card-img">
+            <h3>Fair and Secure</h3>
+            <p>Fair gameplay ensured by smart contracts, with rewards instantly transferred.</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Start Game Button -->
+    <section id="startGame" class="start-game">
+        <a href="game.html" class="btn">Start Game</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Chain Reflex</h2>
+        <p>Chain Reflex is an innovative twist on the traditional Rock Paper Scissors game, built on the Ethereum blockchain. Players compete using MemeCoin, a unique ERC-20 token. The game is designed to offer a fun and decentralized gaming experience, where every match is fair and transparent. With an easy-to-use interface, players can easily join games, make moves, and win rewards. Play now to see if you have what it takes to win!</p>
+    </section>
+    
+</body>
+</html>
