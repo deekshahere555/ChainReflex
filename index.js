@@ -194,7 +194,7 @@ const rockPaperScissorsABI = [
 		"type": "function"
 	}
 ];
-const rockPaperScissorsAddress = "0xA16748E85bE15EcF751f8936016CF75ec5a0a00E";
+const rockPaperScissorsAddress = "0xd536154E364F238CB63bc6d91d6be30060084E82";
 
 const memeCoinABI = [
 	{
@@ -449,7 +449,7 @@ const memeCoinABI = [
 		"type": "function"
 	}
 ]
-const memeCoinAddress = "0x340Aa13f9FCc6C2c016C65197D096965C4eBF61E";
+const memeCoinAddress = "0x4EA90E9Ee0665D804C2D8d0b87E1FC69af7A0971";
 
 let web3;
 let rockPaperScissorsContract;
