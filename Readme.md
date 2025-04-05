@@ -31,11 +31,11 @@ A decentralized Rock Paper Scissors game built with Solidity, Web3.js, and an ER
 ## Contract Details
 
 - **Contract Address**: `0xd536154E364F238CB63bc6d91d6be30060084E82`
-- **Network**: Neo X Mainnet
+- **Network**: EduChain Testnet
 ## Deployment
 
 - **Contract Address**: [View on Explorer](https://xexplorer.neo.org/address/0xd536154E364F238CB63bc6d91d6be30060084E82)
-- **Coin Used**: GAS
+- **Coin Used**: EDU
 
 ## User Interface
 
