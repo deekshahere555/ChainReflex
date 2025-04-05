@@ -86,5 +86,3 @@ The frontend is designed for simplicity and engagement:
 
 <img width="1440" alt="Screenshot 2024-12-24 at 1 34 13 AM" src="https://github.com/user-attachments/assets/742d2a42-78ad-426e-95ca-cb021045d98d" />
 
-<img width="1440" alt="Screenshot 2024-12-24 at 1 32 54 AM" src="https://github.com/user-attachments/assets/48639735-1c64-4f06-8556-02d7c4e99826" />
-
